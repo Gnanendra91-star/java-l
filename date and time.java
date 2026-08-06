@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main {
+
+    public static String findDay(int month, int day, int year) {
+        Calendar cal = Calendar.getInstance();
+
+        cal.set(year, month - 1, day);
+
+        String dayOfWeek = cal.getDisplayName(
+            Calendar.DAY_OF_WEEK,
+            Calendar.LONG,
+            Locale.ENGLISH
+        );
+
+        return dayOfWeek.toUpperCase();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int month = sc.nextInt();
+        int day = sc.nextInt();
+        int year = sc.nextInt();
+
+        System.out.println(findDay(month, day, year));
+
+        sc.close();
+    }
+}
